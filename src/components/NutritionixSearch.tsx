@@ -47,7 +47,7 @@ const NutritionixSearch = ({ onAddMeal, selectedDate }: Props) => {
       });
 
       const data = await res.json();
-      const nutrient = data.foods[0]; // should be only one
+      const nutrient = data.foods[0]; 
 
       const meal: Omit<Meal, 'id'> = {
         name: nutrient.food_name,
@@ -56,7 +56,7 @@ const NutritionixSearch = ({ onAddMeal, selectedDate }: Props) => {
         carbs: nutrient.nf_total_carbohydrate || 0,
         fat: nutrient.nf_total_fat || 0,
         date: selectedDate,
-        mealType: 'Lunch', // You can make this dynamic
+        mealType: 'Lunch', 
       };
 
       onAddMeal(meal);
