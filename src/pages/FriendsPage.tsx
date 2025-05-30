@@ -71,7 +71,7 @@ export default function FriendsPage() {
     const fromUserUid = fromUser.uid;
 
     try {
-      // 1. Add fromUser to current user's friends list
+//This adds users to another user's friend list
       await setDoc(doc(db, 'users', currentUserUid, 'friends', fromUserUid), {
         friendUid: fromUserUid,
         addedAt: serverTimestamp(),
