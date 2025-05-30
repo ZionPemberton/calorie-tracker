@@ -37,7 +37,7 @@ export default function LogMealForm({ onAddMeal, editingMeal }: Props) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await onAddMeal(form); // ✅ Await the async function
+    await onAddMeal(form); 
     setForm({
       name: '',
       mealType: 'Breakfast',
