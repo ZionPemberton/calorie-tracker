@@ -20,7 +20,7 @@ export default function SignUp() {
             // Optionally set displayName on Firebase Auth
             await updateProfile(user, { displayName });
 
-            // ✅ Confirm user is signed in
+// confirms that user is signed in
             if (!user.uid) throw new Error('User ID not available');
 
             const userData = {
@@ -31,7 +31,7 @@ export default function SignUp() {
 
             console.log("Preparing to write user data to Firestore:", userData);
 
-            // ✅ Write to /users/{user.uid}
+            //  Write to /users/{user.uid}
             await setDoc(doc(db, 'users', user.uid), userData);
 
             console.log("✅ User document successfully written!");
